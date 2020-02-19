@@ -9,7 +9,9 @@ import { Browser, launch, Page } from 'puppeteer';
 import { Genre } from './index.d';
 
 dotenv.config();
-const config = yaml.safeLoad(fs.readFileSync('twins-notification.config.yaml', 'utf-8'));
+const config = yaml.safeLoad(
+  fs.readFileSync('twins-notification.config.yaml', 'utf-8')
+);
 
 // Puppeteer で使う DOM のセレクタ
 const selectors = {
@@ -65,7 +67,7 @@ function newsDaysFilter(news: any): boolean {
   const newsDate = dayjs(dayjs(news.掲載日時).format('YYYY-MM-DD'));
   const limitDate = dayjs(dayjs().format('YYYY-MM-DD'))
     .subtract(config.notify_since_days, 'day')
-    .subtract(1, 'second');
+    .subtract(1, 'second'); // isAfter() は等しい場合は false を返すため 1s だけ引いています。
   return newsDate.isAfter(limitDate);
 }
 
@@ -118,14 +120,15 @@ async function getNewsList(page: Page, genre: Genre) {
   }
 
   await page.evaluate(linkScript);
-  await page.waitFor(1000);
+  await page.waitFor(2000);
 
   const frame = (await page.frames()).find(frame => {
     return frame.name() === selectors.newsFrameName;
   });
+  await frame.waitFor(selectors.newsDisplayCount);
   await frame.select(selectors.newsDisplayCount, '200');
   await frame.click(selectors.newsDisplayCountButton);
-  await page.waitFor(1000);
+  await page.waitFor(2000);
 
   const newFrame = (await page.frames()).find(
     frame => frame.name() === selectors.newsFrameName
