@@ -25,3 +25,7 @@
 1. `yarn install` を実行する (初回のみ)。
 1. `yarn start` を実行する
 1. Slack に通知が来るはずです。
+
+## ライセンス
+
+[GNU General Public License v3.0](./LICENSE)
