@@ -6,6 +6,8 @@ import * as yaml from 'js-yaml';
 import * as _ from 'lodash';
 import { Browser, launch, Page } from 'puppeteer';
 
+import { Genre } from './index.d';
+
 dotenv.config();
 const config = yaml.safeLoad(fs.readFileSync('twins-notification.config.yaml', 'utf-8'));
 
@@ -83,12 +85,6 @@ async function getPageWithLogin(browser: Browser) {
 async function gotoNewsTab(page: Page) {
   await page.click(selectors.newsTab);
   await page.waitFor(selectors.newsTabWait);
-}
-
-interface Genre {
-  name: string;
-  count: number;
-  linkScript: string;
 }
 
 // 掲示のジャンル情報を取得する
