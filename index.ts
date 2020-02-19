@@ -7,7 +7,7 @@ import * as _ from 'lodash';
 import { Browser, launch, Page } from 'puppeteer';
 
 dotenv.config();
-const config = yaml.safeLoad(fs.readFileSync('twins-rss.config.yaml', 'utf-8'));
+const config = yaml.safeLoad(fs.readFileSync('twins-notification.config.yaml', 'utf-8'));
 
 // Puppeteer で使う DOM のセレクタ
 const selectors = {
