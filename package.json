@@ -1,0 +1,28 @@
+{
+  "name": "twins-notification",
+  "version": "1.0.0",
+  "description": "Send notification of news on Twins for University of Tsukuba.",
+  "main": "index.js",
+  "repository": "https://github.com/shuuji3/twins-rss",
+  "author": "TAKAHASHI Shuuji <shuuji3@gmail.com>",
+  "license": "GPL-3.0+",
+  "scripts": {
+    "start": "ts-node --project tsconfig.json index.ts"
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "dayjs": "^1.8.20",
+    "dotenv": "^8.2.0",
+    "lodash": "^4.17.15",
+    "puppeteer": "^2.1.1"
+  },
+  "devDependencies": {
+    "@types/axios": "^0.14.0",
+    "@types/dotenv": "^8.2.0",
+    "@types/lodash": "^4.14.149",
+    "@types/puppeteer": "^2.0.0",
+    "prettier": "^1.19.1",
+    "ts-node": "^8.6.2",
+    "typescript": "^3.7.5"
+  }
+}
