@@ -6,7 +6,7 @@
 
 1. `.env.example`を`.env`にコピーする。
 1. `.env`に必要な情報を入力する。
-1. `twins-rss.config.yaml`を自分好みに設定する。
+1. `twins-notification.config.yaml`を自分好みに設定する。
 
 ### Node.jsを使用する場合
 
