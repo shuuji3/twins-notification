@@ -32,7 +32,7 @@ const selectors = {
 (async () => await main())();
 
 async function main() {
-  const browser = await launch({ headless: !config.debug });
+  const browser = await launch({ headless: !config.debug, args: ['--no-sandbox'] });
   try {
     const page = await getPageWithLogin(browser);
     await gotoNewsTab(page);
