@@ -1,0 +1,19 @@
+---
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: twins-notification
+spec:
+  schedule: 0 9 * * *
+  jobTemplate:
+    metadata:
+      name: twins-notification
+    spec:
+      template:
+        metadata:
+          name: twins-notification
+        spec:
+          containers:
+          - name: twins-notification
+            image: gcr.io/api-project-466263183174/twins-notification
+          restartPolicy: OnFailure
