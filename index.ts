@@ -158,11 +158,10 @@ async function getNewsList(page: Page, genre: Genre) {
 
 // 1つのニュースについて Slack に Webhook で通知を送る
 async function sendSlackWebhook(news: any) {
-  const title = `[${news.ジャンル}] ${news.表題}`;
+  const title = `[${news.ジャンル}]`;
   const icon_emoji =
     config.genre_emoji_map[news.ジャンル] ?? config.genre_emoji_map.default;
   delete news.ジャンル;
-  delete news.表題;
   const body = convertToReadableText(news);
   const payload = {
     icon_emoji,
