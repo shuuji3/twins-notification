@@ -10,7 +10,7 @@ notify_by:
 #    1 = 昨日と今日掲示されたお知らせを通知
 #    0 = 今日掲示されたお知らせを通知
 #    -1 = すべてのお知らせを通知
-notify_since_days: 1
+notify_since_days: 0
 
 # 無視するお知らせの種類を指定します。
 ignore_genres:
