@@ -2,6 +2,11 @@
 
 筑波大学の[Twins](https://twins.tsukuba.ac.jp/)の掲示板のお知らせを通知してくれるプログラムです。Twinsの掲示板を確認するのが大変な人のために作りました。
 
+## スクリーンショット
+
+![Slack通知のスクリーンショット](screenshot.png)
+💻 Slackへの通知例
+
 ## 使い方
 
 1. `.env.example`を`.env`にコピーする。
