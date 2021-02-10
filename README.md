@@ -47,3 +47,7 @@ make deploy
 ## ライセンス
 
 [GNU General Public License v3.0](./LICENSE)
+
+## 関連リポジトリ
+
+- [shuuji3/userscript-twins-insert-article-url-button: 📋 筑波大学のtwinsに「個別のお知らせページを開くボタン」と「他人と共有できるURLをコピーするボタン」を追加するスクリプト](https://github.com/shuuji3/userscript-twins-insert-article-url-button)
