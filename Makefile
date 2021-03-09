@@ -1,6 +1,6 @@
 .PHONY: build push run deploy
 
-GOOGLE_CLOUD_PROJECT = api-project-466263183174
+GOOGLE_CLOUD_PROJECT = $(shell gcloud config get-value project)
 IMAGE_TAG = gcr.io/$(GOOGLE_CLOUD_PROJECT)/twins-notification
 
 build:
